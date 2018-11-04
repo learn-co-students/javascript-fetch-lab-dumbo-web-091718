@@ -15,7 +15,6 @@ function getIssues() {
 }
 
 function showIssue(issue, issusesList) {
-
   const issuseElement = document.createElement('li')
 
   issuseElement.innerHTML = `<h3>${issue.title}</h3>
