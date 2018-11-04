@@ -6,7 +6,6 @@ function getIssues() {
   fetch(url, {
     method: "GET",
     headers:{ Authorization: `token ${token}`}
-    // body: JSON.stringify({title, body}) // no body
   }).then(resp => resp.json())
   .then(resp => {
     console.log(resp);
@@ -73,7 +72,6 @@ function forkRepo() {
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
   //use fetch to fork it!
   const url = `https://api.github.com/repos/${repo}/forks`;
-  //use fetch to fork it!
   fetch(url , {
          method: "POST",
          headers: { //Status Code: 307 Internal Redirect Nut //401 with mode: "no-cors",
@@ -89,8 +87,6 @@ function forkRepo() {
 function getToken() {
   const token = ""
   return token
-  //change to your token to run in browser, but set
-  //back to '' before committing so all tests pass
 }
 
 getIssues()
