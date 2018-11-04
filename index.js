@@ -22,7 +22,6 @@ function showIssue(issue, issusesList) {
                          <h4>${issue.body}</h4>`
 
   issusesList.appendChild(issuseElement)
-
 }
 
 function showIssues(issues) {
