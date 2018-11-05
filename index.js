@@ -1,5 +1,4 @@
 const token = getToken()
-
 function getIssues() {
   const repo = 'Naser2/javascript-fetch-lab';
   const url = `https://api.github.com/repos/${repo}/issues`;
@@ -25,18 +24,6 @@ function showIssue(issue, issusesList) {
 function showIssues(issues) {
   const issuesDiv = document.getElementById('issues')
   const issusesList =  document.createElement('ul')
-/*
-  const issusesList =  document.createElement('ul')
-  console.log(issusesList);
-  //issusesUl.setAttribute('class', 'issues-ul')
-  //console.log(issusesLi);
-  //issusesLi.setAttribute('class', 'issues-Element')
-  // issusesUl.appendChild(issusesLi)
-  const issues = document.getElementById('issues')
-  // console.log(issues);
-
-  issues.appendChild(issusesList) */
-
   issues.forEach(issue => {
     showIssue(issue, issusesList)
   })
@@ -50,7 +37,7 @@ function createIssue() {
   const url = `https://api.github.com/repos/${repo}/issues`;
 
   fetch(url, {
-    method: 'POST',
+    method: 'post',
     headers: {
       'Authorization': `token ${token}`,
     },
@@ -73,7 +60,7 @@ function forkRepo() {
   //use fetch to fork it!
   const url = `https://api.github.com/repos/${repo}/forks`;
   fetch(url , {
-         method: "POST",
+         method: "post",
          headers: { //Status Code: 307 Internal Redirect Nut //401 with mode: "no-cors",
            'Authorization': `token ${token}`
          },
@@ -88,5 +75,4 @@ function getToken() {
   const token = ""
   return token
 }
-
 getIssues()
